@@ -3,12 +3,13 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./products.css";
 
+
 const Headphones = () => {
   const navigate = useNavigate();
   const [headphones, setHeadphones] = useState([]);
 
   const getHeadphones = async () => {
-    const { data } = await axios.get("http://localhost:5001/headphones");
+    const { data } = await axios.get("https://ecommerce-backend-ax2s.onrender.com/headphones");
     setHeadphones(data);
   };
 

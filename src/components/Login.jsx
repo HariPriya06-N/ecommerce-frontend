@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css"; 
 
+
 const Login = () => {
   const uname = useRef(null);
   const upwd = useRef(null);
@@ -19,7 +20,7 @@ const Login = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:5001/login", {
+      const response = await axios.post("https://ecommerce-backend-ax2s.onrender.com/login", {
         username,
         password,
       });

@@ -26,7 +26,7 @@ const CartSummary = () => {
   const handlePostPayment = async () => {
     try {
       const message = generateCartMessage();
-      await axios.post('http://localhost:5001/send-whatsapp', { message });
+      await axios.post('https://ecommerce-backend-ax2s.onrender.com/send-whatsapp', { message });
       setWhatsappStatus('✅ Message sent!');
     } catch (err) {
       console.error("WhatsApp Error:", err);

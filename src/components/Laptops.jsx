@@ -8,7 +8,7 @@ const Laptops = () => {
   const [laptops, setLaptops] = useState([]);
 
   const getLaptops = async () => {
-    const { data } = await axios.get("http://localhost:5001/laptops");
+    const { data } = await axios.get("https://ecommerce-backend-ax2s.onrender.com/laptops");
     setLaptops(data);
   };
 

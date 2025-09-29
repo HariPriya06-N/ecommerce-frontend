@@ -3,12 +3,13 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./products.css"; 
 
+
 const Mobiles = () => {
   const navigate = useNavigate();
   const [mobiles, setMobiles] = useState([]);
 
   const getMobiles = async () => {
-    const { data } = await axios.get("http://localhost:5001/mobiles");
+    const { data } = await axios.get("https://ecommerce-backend-ax2s.onrender.com/mobiles");
     setMobiles(data);
   };
 
