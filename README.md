@@ -1,12 +1,34 @@
-# React + Vite
+# 🛍️ E-Commerce Web Application (Frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### 🌐 Live Demo  
+🔗 [View Deployed App](https://ecommerce-frontend-haripriya.netlify.app/)
 
-Currently, two official plugins are available:
+### 📦 Backend Repository  
+🔗 [E-Commerce Backend (Spring Boot)](https://github.com/HariPriya06-N/ecommerce-backend)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+### ⚙️ Tech Stack
+- React.js (Vite)
+- React Router DOM
+- Axios
+- CSS3 (Responsive Design)
+- Razorpay Payment Integration
+- WhatsApp API Integration
+- Deployed on Netlify
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+### 🚀 Features
+- Full-stack e-commerce web app  
+- Product browsing and cart management  
+- Razorpay payment gateway for secure checkout  
+- WhatsApp order notifications after successful payment  
+- REST API integration with Spring Boot backend  
+
+---
+
+### 👩‍💻 Author
+**Hari Priya Natukula**  
+📧 [natukulaharipriya@gmail.com](mailto:natukulaharipriya@gmail.com)  
+🔗 [LinkedIn](https://linkedin.com/in/haripriya-natukula) | [GitHub](https://github.com/HariPriya06-N)
