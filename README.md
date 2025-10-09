@@ -12,7 +12,7 @@
 - React.js (Vite)
 - React Router DOM
 - Axios
-- CSS3 (Responsive Design)
+- CSS3 
 - Razorpay Payment Integration
 - WhatsApp API Integration
 - Deployed on Netlify
