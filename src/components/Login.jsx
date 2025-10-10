@@ -1,34 +1,44 @@
 import axios from "axios";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Login.css"; 
-
+import "./Login.css";
 
 const Login = () => {
-  const uname = useRef(null);
-  const upwd = useRef(null);
-  const navigate = useNavigate();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
+  const navigate = useNavigate();
 
   const login = async () => {
-    const username = uname.current.value.trim();
-    const password = upwd.current.value.trim();
+    // Trim inputs
+    const trimmedUsername = username.trim();
+    const trimmedPassword = password.trim();
 
-    if (!username || !password) {
+    if (!trimmedUsername || !trimmedPassword) {
       setErrorMsg("Both username and password are required.");
       return;
     }
 
     try {
       const response = await axios.post("https://ecommerce-backend-ax2s.onrender.com/login", {
-        username,
-        password,
+        username: trimmedUsername,
+        password: trimmedPassword,
       });
 
-      if (response.data === "Login success") {
+      const message = response.data;
+
+      if (message.startsWith("Login success") || message.startsWith("New user created successfully")) {
+       
+        setErrorMsg(""); 
+        setUsername(""); 
+        setPassword("");
         navigate("/dashboard");
-      } else {
+      } else if (message === "Invalid password") {
         setErrorMsg("Invalid credentials. Try again.");
+      } else if (message === "User not found") {
+        setErrorMsg("User does not exist.");
+      } else {
+        setErrorMsg(message); 
       }
     } catch (error) {
       console.error("Error during login", error);
@@ -41,8 +51,20 @@ const Login = () => {
       <fieldset className="login-box">
         <legend className="login-title">LOGIN</legend>
         {errorMsg && <div className="login-error">{errorMsg}</div>}
-        <input type="text" ref={uname} placeholder="Enter username" className="login-input" />
-        <input type="password" ref={upwd} placeholder="Enter password" className="login-input" />
+        <input
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder="Enter username"
+          className="login-input"
+        />
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Enter password"
+          className="login-input"
+        />
         <button onClick={login} className="login-button">Login</button>
       </fieldset>
     </div>
